@@ -1,0 +1,22 @@
+services:
+  rstudio:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: zongzhiliu/rstudio
+    stdin_open: true
+    tty: true
+    ports:
+      - "8787:8787"
+      - "8888:8888"
+    volumes:
+      - .:/home/rstudio/app
+    working_dir: /home/rstudio/app
+    environment:
+      # disable authentication
+      - DISABLE_AUTH=true
+      - PGPORT=${PGPORT}
+      - PGDATABASE=${PGDATABASE}
+      - PGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}
+    container_name: "biopharma_rstudio"

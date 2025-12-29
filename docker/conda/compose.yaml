@@ -1,0 +1,19 @@
+services:
+  python:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: zongzhiliu/conda
+    container_name: "biopharma_conda"
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - DISABLE_AUTH=true
+      - PGHOST=host.docker.internal
+      - PGPORT=${PGPORT}
+      - PGDATABASE=${PGDATABASE}
+      - PGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}

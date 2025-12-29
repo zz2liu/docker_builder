@@ -1,0 +1,111 @@
+# -------------------------
+# OS / editors / tooling
+# -------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------
+# Python
+# -------------------------
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs / packaging / build
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Test / cache
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+
+# Secrets / local config
+.env
+.env.*       # local environment overrides
+
+# Jupyter
+.ipynb_checkpoints/
+
+# -------------------------
+# R
+# -------------------------
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Rproj
+.Renviron*
+.Rprofile
+renv/library/
+renv/staging/
+
+# -------------------------
+# Docker / local container files
+# -------------------------
+# local override files and envs
+docker-compose.override.yml
+docker-compose.*.override.yml
+# local build context caches
+**/.docker/
+
+# -------------------------
+# LLM / ML model artifacts
+# -------------------------
+# Large model files & checkpoints
+models/
+checkpoints/
+weights/
+outputs/
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.onnx
+*.tflite
+*.h5
+*.tar
+*.zip
+
+# model-specific cache / temp
+*.msgpack
+*.index
+
+# -------------------------
+# Database (local)
+# -------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sqlitedb
+*.dump
+*.sql.gz
+/data/*
+/db/*
+
+# -------------------------
+# Logs & misc
+# -------------------------
+*.log
+logs/
+tmp/
+*.pid
+*.seed

@@ -1,0 +1,21 @@
+services:
+  pyr:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: zongzhiliu/ubuntu_pyr
+    stdin_open: true
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      # disable authentication
+      - DISABLE_AUTH=true
+      - PGPORT=${PGPORT}
+      - PGDATABASE=${PGDATABASE}
+      - PGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}
+    container_name: "biopharma_pyr"
